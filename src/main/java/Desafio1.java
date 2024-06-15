@@ -24,10 +24,14 @@ public class Desafio1 {
             if (opcao == 1) {
                 System.out.println("Seu saldo atual é de R$" + saldo);
             } else if (opcao == 2) {
-                System.out.println("Qual o valor do deposito.");
-                double deposito = leitura.nextDouble();
-                saldo += deposito;
-                System.out.println("Seu novo saldo é de R$" + saldo);
+                if (saldo > 0) {
+                    System.out.println("Qual o valor do deposito.");
+                    double deposito = leitura.nextDouble();
+                    saldo += deposito;
+                    System.out.println("Seu novo saldo é de R$" + saldo);
+                } else {
+                    System.out.println("Apenas valores positivos são permitidos.");
+                }
             } else if (opcao == 3) {
                 System.out.println("Qual o valor de saque.");
                 double saque = leitura.nextDouble();
